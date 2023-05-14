@@ -1,0 +1,35 @@
+
+#Install Library
+library(e1071)
+a. Find the skewness of city miles per mileage in the data set mpg ?
+Use qplot function and display the graph for the city miles per mileage column
+
+b. Find the kurtosis of city miles per mileage in the data set mpg
+Use qplot function and display the graph for the city miles per mileage column
+
+
+
+Coding:
+# Install e1071 library
+install.packages("e1071")
+library(e1071)
+
+# Load mpg dataset
+data(mpg)
+
+# Compute skewness of city miles per mileage column
+skewness <- skewness(mpg$city / mpg$highway)
+cat("Skewness:", skewness, "\n")
+
+# Plot histogram of city miles per mileage column
+library(ggplot2)
+qplot(mpg$city / mpg$highway, geom="histogram", binwidth=0.1,
+      xlab="City Miles per Mileage", ylab="Count")
+
+# Compute kurtosis of city miles per mileage column
+kurtosis <- kurtosis(mpg$city / mpg$highway)
+cat("Kurtosis:", kurtosis, "\n")
+
+# Plot density plot of city miles per mileage column
+qplot(mpg$city / mpg$highway, geom="density",
+      xlab="City Miles per Mileage", ylab="Density")
