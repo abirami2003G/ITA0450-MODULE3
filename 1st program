@@ -1,0 +1,43 @@
+I. ARITHMETIC MEAN
+# a) Write suitable R code to compute the average of the following values.
+12,7,3,4.2,18,2,54,-21,8,-5
+
+values <- c(12, 7, 3, 4.2, 18, 2, 54, -21, 8, -5)
+mean(values)
+
+#b) Compute the mean after applying the trim option and removing 3 values from each
+end.
+
+trimmed_mean <- mean(values, trim = 0.3)
+trimmed_mean
+
+#c) Compute the mean of the following vector .
+(12,7,3,4.2,18,2,54,-21,8,-5,NA)
+#If there are missing values, then the mean function returns NA.
+# Find mean dropping NA values.
+#To drop the missing values from the calculation use na.rm = TRUE
+ 
+ vector_with_na <- c(12, 7, 3, 4.2, 18, 2, 54, -21, 8, -5, NA)
+mean(vector_with_na, na.rm = TRUE)
+
+II.MEDIAN
+Write suitable R code to compute the median of the following values.
+12,7,3,4.2,18,2,54,-21,8,-5
+
+coding:
+values <- c(12, 7, 3, 4.2, 18, 2, 54, -21, 8, -5)
+median(values)
+
+III. MODE
+Calculate the mode for the following numeric as well as character data set in R.
+(2,1,2,3,1,2,3,4,1,5,5,3,2,3) , (&quot;o&quot;,&quot;it&quot;,&quot;the&quot;,&quot;it&quot;,&quot;it&quot;
+
+ Coding:
+ numeric_data <- c(2, 1, 2, 3, 1, 2, 3, 4, 1, 5, 5, 3, 2, 3)
+Mode <- function(x) {
+  ux <- unique(x)
+  ux[which.max(tabulate(match(x, ux)))]
+}
+Mode(numeric_data)
+
+ 
