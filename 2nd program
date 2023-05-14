@@ -1,0 +1,23 @@
+2.
+i) Find the car which gives maximum city miles per gallon
+ii) Find the cars which gives minimum disp in compact and subcompact class
+
+ coding:
+ # Load the ggplot2 library (for the mpg dataset)
+library(ggplot2)
+
+# Load the mpg dataset
+data(mpg)
+
+# Find the car which gives maximum city miles per gallon
+max_cty_car <- mpg[which.max(mpg$cty), "model"]
+
+# Print the result
+cat("The car which gives maximum city miles per gallon is", max_cty_car, "\n")
+
+# Find the cars which gives minimum disp in compact and subcompact classes
+min_disp_cars <- mpg[mpg$class %in% c("compact", "subcompact"),]
+min_disp_cars <- min_disp_cars[min_disp_cars$disp == min(min_disp_cars$disp), "model"]
+
+# Print the result
+cat("The cars which give minimum disp in compact and subcompact classes are", paste(min_disp_cars, collapse = ", "), "\n")
