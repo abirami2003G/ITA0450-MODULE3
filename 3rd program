@@ -1,0 +1,18 @@
+Use the same dataset as used in Exercise 4 and perform the following queries
+i) Find the standard deviation of city milles per gallon
+ii) Find the variance of highway milles per gallon
+ Coding:
+  # Load the dataset
+cars_data <- read.csv("path/to/dataset.csv")
+
+# Find the standard deviation of city miles per gallon
+sd_city_mpg <- sd(cars_data$city_mpg)
+
+# Print the standard deviation of city miles per gallon
+cat("The standard deviation of city miles per gallon is", sd_city_mpg, "\n")
+
+# Find the variance of highway miles per gallon
+var_highway_mpg <- var(cars_data$highway_mpg[cars_data$transmission_type == "Manual"])
+
+# Print the variance of highway miles per gallon
+cat("The variance of highway miles per gallon is", var_highway_mpg, "\n")
