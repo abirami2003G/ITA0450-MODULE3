@@ -1,0 +1,23 @@
+Write a program for creating a bar chart using the vectors H=c(7,12,28,3,41) and 
+M=c(“mar”, “apr”, “may”, “jun”, “jul”). Add a title to the chart as “Revenue chart”.
+
+program:
+
+# Install and load necessary packages
+install.packages("ggplot2")
+library(ggplot2)
+
+# Define the vectors
+H <- c(7, 12, 28, 3, 41)
+M <- c("mar", "apr", "may", "jun", "jul")
+
+# Create a data frame from the vectors
+data <- data.frame(Month = M, Revenue = H)
+
+# Create the bar chart using ggplot2
+chart <- ggplot(data, aes(x = Month, y = Revenue)) +
+  geom_bar(stat = "identity", fill = "blue") +
+  labs(title = "Revenue chart")
+
+# Display the chart
+print(chart)
