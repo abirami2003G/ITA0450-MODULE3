@@ -1,0 +1,33 @@
+. Create a 3D Pie Chart for the dataset “political Knowledge” with suitable 
+labels,colours and a legend at the top right corner of the chart
+
+ program:
+ 
+ # Install and load the required packages
+install.packages("plotly")
+library(plotly)
+
+# Sample data
+political_knowledge <- c("High", "Medium", "Low")
+count <- c(25, 35, 40)
+
+# Create a data frame
+df <- data.frame(political_knowledge, count)
+
+# Define colors for the pie chart
+colors <- c("#FFA500", "#FFFF00", "#FF0000")  # Orange, Yellow, Red
+
+# Create a 3D pie chart using plotly
+plot <- plot_ly(df, labels = ~political_knowledge, values = ~count, type = "pie",
+                marker = list(colors = colors), 
+                textinfo = "percent+label",
+                hoverinfo = "text",
+                text = ~paste(political_knowledge, ": ", count),
+                rotation = 90) %>%
+  layout(title = "Political Knowledge",
+         showlegend = TRUE,
+         legend = list(x = 1, y = 0.9),
+         margin = list(l = 50, r = 50, t = 100, b = 50))
+
+# Display the plot
+plot
