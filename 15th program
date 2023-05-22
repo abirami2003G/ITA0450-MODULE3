@@ -1,0 +1,14 @@
+Create a Boxplot graph for the relation between "mpg"(miles per galloon) and 
+"cyl"(number of Cylinders) for the dataset "mtcars" available in R Environment
+
+
+ program:
+ 
+ # Load the mtcars dataset
+data(mtcars)
+
+# Create a boxplot
+boxplot(mpg ~ cyl, data = mtcars,
+        main = "Boxplot of mpg by number of cylinders",
+        xlab = "Number of cylinders",
+        ylab = "Miles per gallon")
