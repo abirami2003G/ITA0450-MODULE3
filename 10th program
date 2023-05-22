@@ -1,0 +1,13 @@
+Column Percentages
+1) Create an xtabs() formula that cross-tabulates “Status“, and “Test“.
+2) Enclose the xtabs() formula in the tigerstats function, “colPerc()” to display row 
+percentages for “Status” by “Test“.
+
+ program:
+ 
+ install.packages("tigerstats")
+library(tigerstats)
+# Assuming your data frame is called "df" and the variables are named "Status" and "Test"
+cross_tab <- xtabs(~ Status + Test, data = df)
+col_perc <- colPerc(cross_tab)
+
