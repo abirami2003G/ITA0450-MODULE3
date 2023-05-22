@@ -1,0 +1,19 @@
+Use the same data frame using three Categorical Variables create a Multi-Dimensional Table
+Apply three variables from “dataframe1” to create a Multi-Dimensional Cross-Tabulation of 
+“Status“, “Gender“, and “Test“
+
+program:
+
+# Assuming your data frame is called dataframe1
+# Assuming the three variables are "Status", "Gender", and "Test"
+
+# Create a multi-dimensional table using the three variables
+cross_tab <- table(dataframe1$Status, dataframe1$Gender, dataframe1$Test)
+
+# Assign row and column names
+row_names <- c("Status1", "Status2", "Status3")  # Replace with actual row names
+col_names <- c("Male", "Female")  # Replace with actual column names
+dimnames(cross_tab) <- list(row_names, col_names)
+
+# Print the cross-tabulation table
+print(cross_tab)
