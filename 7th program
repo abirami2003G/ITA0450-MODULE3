@@ -1,0 +1,27 @@
+7th programi) Use Two Categorical Variables and Discover the relationships within a  dataset 
+ii) Next, using the xtabs() function, apply two variables from “dataframe1 “, to  create a table delineating the relationship between the “Reference”  category, and the “Status” category.
+iii) Save the file in the name of dataframe2
+ 
+ program:
+ 
+ # Load the required libraries
+library(dplyr)
+library(ggplot2)
+
+# Explore the relationship between two categorical variables
+ggplot(dataframe1, aes(x = Variable1, fill = Variable2)) +
+  geom_bar(position = "fill") +
+  labs(x = "Variable1", y = "Proportion", fill = "Variable2") +
+  theme_minimal()
+
+# Create a table using xtabs()
+table_data <- xtabs(~ Reference + Status, dataframe1)
+
+# View the table
+print(table_data)
+
+# Convert the table to a dataframe
+dataframe2 <- as.data.frame.matrix(table_data)
+
+# Save the dataframe as a file
+write.csv(dataframe2, file = "dataframe2.csv", row.names = TRUE)
