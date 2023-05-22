@@ -1,0 +1,17 @@
+3. Write a program for creating a pie-chart in R using the input vector(21,62,10,53). 
+Provide labels for the chart as ‘London’, ‘New York’, ‘Singapore’, ‘Mumbai’. Add a 
+title to the chart as ‘city pie-chart’ and add a legend at the top right corner of the chart.
+ program:
+ 
+ # Input vector
+data <- c(21, 62, 10, 53)
+
+# Labels for the chart
+labels <- c('London', 'New York', 'Singapore', 'Mumbai')
+
+# Create pie chart
+pie(data, labels = labels, main = 'City Pie Chart')
+
+# Add legend at top right corner
+legend('topright', legend = labels, cex = 0.8, fill = rainbow(length(data)))
+
