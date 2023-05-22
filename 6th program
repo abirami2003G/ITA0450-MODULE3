@@ -1,0 +1,7 @@
+library(stats)
+
+# Crosstab for Status and Gender
+status_gender_table <- xtabs(~ Status + Gender, data = dataframe1)
+print(status_gender_table)
+print(dataframe2)
+save(dataframe2, file = "dataframe2.RData")
